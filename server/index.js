@@ -249,7 +249,11 @@ app.get('*', (req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Cloudinary Creator Studio server running on http://localhost:${PORT}`);
-  console.log(`☁️ Connected to Cloudinary Cloud: ${cloud_name}`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Cloudinary Creator Studio server running on http://localhost:${PORT}`);
+    console.log(`☁️ Connected to Cloudinary Cloud: ${cloud_name}`);
+  });
+}
+
+module.exports = app;

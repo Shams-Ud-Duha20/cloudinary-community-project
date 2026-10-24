@@ -7,8 +7,15 @@
     "start": "node server/index.js",
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm run dev",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm install && npm run build",
     "install:all": "npm --prefix server install && npm --prefix client install"
+  },
+  "dependencies": {
+    "cloudinary": "^2.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "multer": "^1.4.5-lts.1"
   },
   "keywords": [
     "cloudinary",
@@ -18,7 +25,8 @@
     "image-transformations",
     "video-ai",
     "react",
-    "express"
+    "express",
+    "vercel"
   ],
   "author": "Cloudinary Creator Candidate",
   "license": "MIT"
